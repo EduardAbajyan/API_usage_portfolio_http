@@ -1,15 +1,9 @@
-import spdy from "spdy";
-import fs from "fs";
 import express from "express";
 import axios from "axios";
 import { config } from "dotenv";
 
 const app = express();
-const port = 443;
-const options = {
-  key: fs.readFileSync("key.pem"),
-  cert: fs.readFileSync("cert.pem"),
-};
+const port = process.env.PORT || 3000;
 config();
 
 let { latitude, longitude } = { latitude: 33.44, longitude: -94.04 };
