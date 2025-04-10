@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather & Timezone App</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
+    <script src="getLocation.js" type="module"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="text-center mb-4">🌍 Weather & Timezone Info</h2>
+
+      <!-- Loading Spinner -->
+      <div id="loading" class="text-center my-4">
+        <div class="spinner-border text-primary" role="status"></div>
+        <p class="mt-2">Fetching your weather data...</p>
+      </div>
+
+      <!-- Weather Data Grid -->
+      <div id="weatherData" class="row justify-content-center d-none">
+        <div class="col-md-6 col-lg-4 text-center mb-3">
+          <p id="lat">Latitude: <%= lat %></p>
+          <p id="lon">Longitude:<%=lon %></p>
+        </div>
+        <div class="col-md-6 col-lg-4 text-center mb-3">
+          <p id="timeZone">Timezone:</p>
+          <p id="offset">Offset:</p>
+        </div>
+        <div class="col-md-6 col-lg-4 text-center mb-3">
+          <p id="dt">Time:</p>
+          <p id="sunrise">Sunrise:</p>
+          <p id="sunset">Sunset:</p>
+        </div>
+        <div class="col-md-6 col-lg-4 text-center mb-3">
+          <p id="temp">Temperature:</p>
+          <p id="feels">Feels like:</p>
+        </div>
+        <div class="col-md-12 col-lg-4 text-center mb-3">
+         <div class="container"  id="current">
+            <div class="row">
+                <div class="col-3">
+                    <img src="https://openweathermap.org/img/wn/01d@2x.png" id="weather_icon"/>
+                </div>
+                <div class="col-9">
+                    <p id="description">Description:</p>
+                </div>
+            </div>
+         </div>
+        </div>
+        <div class="col-md-6 col-lg-4 text-center mb-3">
+          <p id="pressure">Pressure:</p>
+          <p id="humidity">Humidity:</p>
+          <p id="dewPoint">Dew Point:</p>
+        </div>
+        <div class="col-md-6 col-lg-4 text-center mb-3">
+          <p id="uvi">UVI:</p>
+          <p id="clouds">Clouds:</p>
+        </div>
+        <div class="col-md-6 col-lg-4 text-center mb-3">
+          <p id="visibility">Visibility:</p>
+        </div>
+        <div class="col-md-6 col-lg-4 text-center mb-3">
+          <p id="windSpeed">Wind speed:</p>
+          <p id="windDeg">Wind Degree:</p>
+        </div>
+      </div>
+
+      <!-- Embedded Map -->
+      <div class="row justify-content-center mt-4">
+        <div class="col-12 col-lg-10 text-center">
+            <div id="map"><%= iframe%></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="dataLoader.js" type="module"></script>
+  </body>
+</html>

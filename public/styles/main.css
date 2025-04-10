@@ -1,0 +1,39 @@
+body {
+  background: linear-gradient(to bottom, #4682b4, #f0f8ff);
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 1rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+  margin: 0.5rem 0;
+}
+
+iframe {
+  transition: transform 0.3s ease;
+}
+
+iframe:hover {
+  transform: scale(1.01);
+}
+
+#current {
+    margin: 0;
+}
+
+.row > div  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
